@@ -33,9 +33,6 @@ export default function Listing(props){
 
 
     // console.log(props.data.owner, cookies.get("currentUser"))
-
-    console.log(props)
-
     return (
         <Card width='235px' height='400px' padding='0'>
             <CardBody>

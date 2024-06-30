@@ -19,11 +19,14 @@ const walletConnectOptions: WalletConnectOptions = {
   },
 };
 
+import Cookies from 'universal-cookie';
+
 export const MyComponent1 = (): JSX.Element => {
   const { account, source } = useWallet();
+  const cookies = new Cookies(null, {path: "/"})
 
   useEffect(() => {
-    console.log(account, source);
+    cookies.set('currentUser', {...cookies.get('currentUser'), ...{"key":account} } )
   }, [account, source]);
 
   return <WalletButton />;

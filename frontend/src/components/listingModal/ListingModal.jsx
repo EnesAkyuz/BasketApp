@@ -40,7 +40,6 @@ export default function ListingModal (props) {
 
     const cookies = new Cookies(null, {path: "/"})
 
-
     const firebaseConfig = {
         apiKey: import.meta.env.VITE_FIREBASE_KEY,
         authDomain: "basket-b5fb8.firebaseapp.com",
@@ -54,8 +53,12 @@ export default function ListingModal (props) {
     const app = initializeApp(firebaseConfig);
     const database = getFirestore(app)
 
+
+
     const handleClick = async () => {
-        console.log(cookies.get('currentUser'))
+
+        onClose()
+
         const data = {
             "title" : title,
             "desc" : desc,
@@ -67,7 +70,7 @@ export default function ListingModal (props) {
             "owner" : cookies.get('currentUser').email,
         }
 
-        if (data.owner) {
+        if (data.user) {
             try{
                 const newListing = await addDoc(collection(database, 'listing'), data)
             } catch(error){
