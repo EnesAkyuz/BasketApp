@@ -32,7 +32,7 @@ export const BuyButton = ({ recipient, price, token, foodItem }: { recipient: st
       const { txid } = await tx.request();
       setTxId(txid);
     } catch (err) {
-      setError(String(err));
+
     }
   };
 
