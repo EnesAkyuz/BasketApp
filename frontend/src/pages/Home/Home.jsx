@@ -86,13 +86,15 @@ export default function Home (props) {
             </div>
 
             <div className={styles.basket}>
-                 <WalletProvider>
-          <MyComponent1 />
-          <MyComponent2 />
-          <MyComponent3 />
-          <MyComponent4 />
-        </WalletProvider>
-        <BasketSidebar />
+            {/* <WalletProvider>
+                <MyComponent1 />
+                <MyComponent2 />
+                <MyComponent3 />
+                <MyComponent4 />
+                            <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"B3TR"} foodItem={"lmao"}></BuyButton>
+                            <ClaimRewardButton rewardAddress={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} amount={1} token={"B3TR"}></ClaimRewardButton>
+                </WalletProvider> */}
+                <BasketSidebar />
             </div>
 
         </div>
