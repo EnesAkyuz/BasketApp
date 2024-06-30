@@ -15,22 +15,26 @@ export const BuyButton = ({ recipient, price, token, foodItem }: { recipient: st
         try {
             setError('');
 
-            const clauses = [
-                {
-                    ...(token === 'B3TR'
-                        ? clauseBuilder.transferToken('B3TR_CONTRACT_ADDRESS', recipient, unitsUtils.parseUnits(price, 18))
-                        : clauseBuilder.transferVET(recipient, unitsUtils.parseVET(price))),
-                    comment: `Buy ${foodItem} for ${price} ${token}`,
-                },
-            ];
+            const value = token === 'B3TR'
+        ? unitsUtils.parseUnits(price, 18).toString()
+        : unitsUtils.parseVET(price).toString();
 
-            const tx = connex.vendor.sign('tx', clauses).signer(account);
-            const { txid } = await tx.request();
-            setTxId(txid);
-        } catch (err) {
-            setError(String(err));
-        }
-    };
+      const clauses = [
+        {
+          to: recipient,
+          value: value,
+          data: '0x',
+          comment: `Buy ${foodItem} for ${price} ${token}`,
+        },
+      ];
+
+      const tx = connex.vendor.sign('tx', clauses).signer(account);
+      const { txid } = await tx.request();
+      setTxId(txid);
+    } catch (err) {
+      setError(String(err));
+    }
+  };
 
     if (!account) return <div>Please connect your wallet to continue.</div>;
 
