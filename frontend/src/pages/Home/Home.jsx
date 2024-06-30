@@ -10,6 +10,7 @@ import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFoot
 import BasketSidebar from '../../components/basketSidebar/basketSideBar.jsx'
 import { Navigate } from "react-router-dom";
 import {WalletProvider, MyComponent1, MyComponent2, MyComponent3, MyComponent4} from "../../components/walletcomp/walletstuff.tsx";
+import {BuyButton} from "../../components/walletcomp/buybutton.tsx";
 
 export default function Home (props) {
 
@@ -82,6 +83,7 @@ export default function Home (props) {
           <MyComponent2 />
           <MyComponent3 />
           <MyComponent4 />
+                     <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"VET"} foodItem={"lmao"}></BuyButton>
         </WalletProvider>
             </div>
 
