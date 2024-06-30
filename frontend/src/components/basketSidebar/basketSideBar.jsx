@@ -7,7 +7,10 @@ export default function BasketSideBar() {
     const iconDetail = (text, icon) => {
         return (
             <Flex width='100%' gap='10px'>
-                <FontAwesomeIcon fontSize='30px' icon={icon} color="#C41116"/>
+                <Box height={'30px'} width={'30px'}>
+                    <FontAwesomeIcon fontSize='30px' icon={icon} color="#C41116"/>
+                </Box>
+
                 <Text fontSize='large'>{text}</Text>
             </Flex>
         )
@@ -23,12 +26,16 @@ export default function BasketSideBar() {
                     <Text fontSize='12px'>Contains white rice, peas, carrots</Text>
 
                     <Flex>
-                        <FontAwesomeIcon fontSize='20px' icon={faPerson} color="#C41116"/>
+                        <Box height={'25px'} width={'25px'} textAlign={'center'}>
+                            <FontAwesomeIcon fontSize='20px' icon={faPerson} color="#C41116"/>
+                        </Box>
                         <Text fontSize='12px' >Enes isSingle</Text>
                     </Flex>
 
                     <Flex>
-                        <FontAwesomeIcon fontSize='20px' icon={faClock} color="#C41116"/>
+                        <Box height={'25px'} width={'25px'}>
+                            <FontAwesomeIcon fontSize='20px' icon={faClock} color="#C41116"/>
+                        </Box>
                         <Text fontSize='12px'>9 mins ago</Text>
                     </Flex>
                 </Stack>
