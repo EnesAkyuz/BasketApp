@@ -91,8 +91,17 @@ export default function Home (props) {
                 <MyComponent2 />
                 <MyComponent3 />
                 <MyComponent4 />
-                    <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"B3TR"} foodItem={"lmao"}></BuyButton>
-                    <ClaimRewardButton rewardAddress={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} amount={1} token={"B3TR"}></ClaimRewardButton>
+                    <BuyButton
+                        recipient={'0xc3b0651ec69b6802340feec23be02c0a5edc273f'}
+                        price="1"
+                        token="B3TR"
+                        foodItem="Sample Food Item"
+                    />
+                    <ClaimRewardButton
+                        rewardAddress={"0x7Bbb17708F43b3751805023278B9cc3D1e4d90a0"}
+                        amount="1"
+                        token="B3TR"
+                    />
                 </WalletProvider>
             </div>
 

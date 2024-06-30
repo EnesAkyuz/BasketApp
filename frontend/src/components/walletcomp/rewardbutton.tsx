@@ -18,7 +18,7 @@ export const ClaimRewardButton = ({ rewardAddress, amount, token }: { rewardAddr
             const clauses = [
                 {
                     ...(token === 'B3TR'
-                        ? clauseBuilder.transferToken('B3TR_CONTRACT_ADDRESS', account, unitsUtils.parseUnits(amount, 18))
+                        ? clauseBuilder.transferToken('0x4e0f872bc3cc8684c28f828a810f0e820116b9e4', account, unitsUtils.parseUnits(amount, 18))
                         : clauseBuilder.transferVET(account, unitsUtils.parseVET(amount))),
                     comment: `Claim ${amount} ${token} reward`,
                 },
