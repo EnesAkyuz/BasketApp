@@ -1,0 +1,26 @@
+.homepage {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "sidebar topbar topbar"
+        "sidebar share basket"
+        "sidebar listings basket"
+    ;
+
+    grid-template-columns: 1fr 4fr 1fr ;
+    grid-template-rows: 1fr 2fr 6fr;
+}
+
+
+.sidebar {grid-area: sidebar;}
+.topbar {grid-area: topbar;}
+.share {grid-area: share;}
+.listings {grid-area: listings;}
+.basket {grid-area: basket;}
+
+.share, .listings {
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
