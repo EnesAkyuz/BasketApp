@@ -9,7 +9,7 @@ import { faBell, faLocation } from "@fortawesome/free-solid-svg-icons";
 import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
 import BasketSidebar from '../../components/basketSidebar/basketSideBar.jsx'
 import { Navigate } from "react-router-dom";
-
+import {WalletProvider, MyComponent1, MyComponent2, MyComponent3, MyComponent4} from "../../components/walletcomp/walletstuff.tsx";
 
 export default function Home (props) {
 
@@ -77,7 +77,12 @@ export default function Home (props) {
             </div>
 
             <div className={styles.basket}>
-                <BasketSidebar />
+                 <WalletProvider>
+          <MyComponent1 />
+          <MyComponent2 />
+          <MyComponent3 />
+          <MyComponent4 />
+        </WalletProvider>
             </div>
 
         </div>
