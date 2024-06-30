@@ -34,6 +34,7 @@ export default function Listing(props){
 
     // console.log(props.data.owner, cookies.get("currentUser"))
 
+    console.log(props)
 
     return (
         <Card width='235px' height='400px' padding='0'>
@@ -52,10 +53,10 @@ export default function Listing(props){
                 <Divider />
 
                 <Stack>
-                    {/* <Flex alignItems='center'  gap='2px'>
-                        <Text as='b' >Distance: </Text>
-                        <Text fontSize='sm'>7 minutes walk</Text>
-                    </Flex> */}
+                    <Flex alignItems='center'  gap='2px'>
+                        <Text as='b' >Expiry: </Text>
+                        <Text fontSize='sm'>{props.data.expiry}</Text>
+                    </Flex>
 
                     <Flex  alignItems='center' gap='2px'>
                         <Text as='b' fontSize='medium'>Owner: </Text>
