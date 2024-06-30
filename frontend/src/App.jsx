@@ -10,6 +10,8 @@ import Home from "./pages/Home/Home.jsx"
 import HomeTest from "./pages/HomeTest/Home.jsx"
 import ListingsPage from './pages/listingsPage/ListingsPage.jsx';
 import NotificationsPage from './pages/notificationsPage/notifications.jsx';
+import BasketPage  from "./pages/basketPage/BasketPage.jsx"
+
 import Cookies from "universal-cookie"
 
 
@@ -25,7 +27,12 @@ function App() {
         <Route path="/Meals" element={<ListingsPage list="meals" />} />
         <Route path="/Items" element={<ListingsPage list="items" />} />
         <Route path="/Desserts" element={<ListingsPage list="desserts" />} />
+
+
         <Route path="/notifications" element={<NotificationsPage />} />
+
+        <Route path="/basket" element={<BasketPage />} />
+
         <Route path="/test" element={<HomeTest />} />
       </Routes>
     </Router>

@@ -54,15 +54,15 @@ export default function BasketSideBar() {
                 {iconDetail("by Enes isSingle", faPerson)}
             </Stack>
 
-            {itemDetail({})}
+            {/* {itemDetail({})} */}
 
-            <h1>Rewards</h1>
+            {/* <h1>Rewards</h1>
 
             <Box w="100%" height='200px' bg="#C41116">
                 <Text color={"white"}>Token Shit</Text>
             </Box>
 
-            <Button backgroundColor={"#C41116"} color={"white"}>Confirm Basket</Button>
+            <Button backgroundColor={"#C41116"} color={"white"}>Confirm Basket</Button> */}
 
         </Stack>
     )

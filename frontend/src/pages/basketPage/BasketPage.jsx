@@ -7,8 +7,17 @@ import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
+import ListingModal from "../../components/listingModal/ListingModal.jsx";
 
-export default function NotificationsPage (props) {
+import { useState } from "react";
+
+import Cookies from "universal-cookie"
+
+export default function BasketPage (props) {
+
+
+
+
 
     return (
         <div className={styles.homepage}>
@@ -30,6 +39,8 @@ export default function NotificationsPage (props) {
             <div className={styles.listings}>
 
                 <h1> My listings </h1>
+
+                <ListingModal />
 
                 <Flex>
                     <Listing />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css"
 import Listing from "../../components/listingCard/Listing";
 import Sidebar from "../../components/sidebar/Sidebar.jsx";
@@ -17,11 +17,56 @@ import {WalletProvider, MyComponent1, MyComponent2, MyComponent3, MyComponent4} 
 import {BuyButton} from "../../components/walletcomp/buybutton.tsx";
 import {ClaimRewardButton} from "../../components/walletcomp/rewardbutton.tsx";
 
+
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
+
+import {getDatabase, onValue, query, ref, set} from "firebase/database"
+
+import { getDoc, getFirestore, setDoc, collection,doc, addDoc, getDocs, QuerySnapshot  } from "firebase/firestore";
+
 export default function Home (props) {
 
     const [navNotifications, setNavNotifications] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [user, setUser] = useState(null)
+    const [allListings, setAllListings] = useState([])
+
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: import.meta.env.VITE_FIREBASE_KEY,
+        authDomain: "basket-b5fb8.firebaseapp.com",
+        projectId: "basket-b5fb8",
+        storageBucket: "basket-b5fb8.appspot.com",
+        messagingSenderId: "454921763756",
+        appId: "1:454921763756:web:053228c03e3bf0ed87d809"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getFirestore(app)
+
+
+    useEffect(()=> {
+        async function fetchData() {
+            const q = query(collection(database, 'listing'))
+            const queryListings = await getDocs(q)
+
+            let allFetchedListings = []
+
+            queryListings.forEach((doc) => {
+                // setAllListings((prev) => {return [...prev, doc.data()]})
+                allFetchedListings = [...allFetchedListings, doc.data()]
+            })
+
+            setAllListings(allFetchedListings)
+        }
+
+        fetchData()
+    },[])
+
+
 
     return (
         <div className={styles.homepage}>
@@ -76,9 +121,11 @@ export default function Home (props) {
                 <Text fontSize='large' padding='20px 40px 0 40px'>All Listings</Text>
 
                 <Flex padding='0 40px 0 40px' flexWrap='wrap' gap={'20px'} >
-                    <Listing />
-
-                    <Listing />
+                    {allListings.map((listing) => {
+                        return (
+                            <Listing key={listing.index} data={listing} />
+                        )
+                    })}
 
 
                 </Flex>

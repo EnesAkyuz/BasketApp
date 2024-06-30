@@ -10,6 +10,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} fr
 
 import {getDatabase, onValue, ref, set} from "firebase/database"
 
+import { getDoc, getFirestore, setDoc, collection,doc, addDoc, getDocs  } from "firebase/firestore";
 
 import {
     Modal,
@@ -21,7 +22,7 @@ import {
     ModalCloseButton,
 } from '@chakra-ui/react'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Cookies from "universal-cookie"
 
@@ -49,28 +50,34 @@ export default function AuthModal () {
         projectId: "basket-b5fb8",
         storageBucket: "basket-b5fb8.appspot.com",
         messagingSenderId: "454921763756",
-        appId: "1:454921763756:web:053228c03e3bf0ed87d809",
-        databaseURL: "https://basket.firebaseio.com"
+        appId: "1:454921763756:web:053228c03e3bf0ed87d809"
     };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app)
+    const database = getFirestore(app)
 
-    const user = ref(database, 'users/DAFx8RuDWpNrEBxNrYWE');
-    onValue(user, (snapshot)=>{
-        const data = snapshot.val()
-        console.log(data)
-    })
+    const usersRef = collection(database, "users")
 
-    const handleSignup = () => {
+    const handleSignup = async () => {
         const auth = getAuth()
         createUserWithEmailAndPassword(auth, emailValue, passValue)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 const user = userCredential.user;
                 if (user) {
                     setUserEmail(user.email)
-                    cookies.set('currentUser', {"id": user.uuid, "email": user.email, "key": null})
+
+                    // const usersRef = collection(database, "users")
+                    // const newUser = doc(database, 'users', user.uuid);
+
+                    const data = {
+                        "address" : "",
+                        "email": user.email,
+                    }
+
+                    const newUser = await setDoc(doc(database, 'users', user.uid), data);
+
+                    cookies.set('currentUser', {"id": user.uid, "email": user.email, "key": null} )
                 }
             })
             .catch((error) => {
@@ -84,18 +91,24 @@ export default function AuthModal () {
         const auth = getAuth();
         console.log(passValue, emailValue)
         signInWithEmailAndPassword(auth, emailValue, passValue)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 const user = userCredential.user
                 if (user) {
                     setUserEmail(user.email)
-                    cookies.set('currentUser', {"id": user.uuid, "email": user.email, "key": null})
+
+                    const userMatch = await getDoc(doc(usersRef, user.uid))
+                    cookies.set('currentUser', {"id": user.uuid, "email": user.email, "key": userMatch.data().address})
                 }
             })
             .catch((error) => {
-
+                console.log(error)
                 alert("invalid login details!")
             })
     }
+
+    useEffect(()=> {
+        setUserEmail(cookies.get('currentUser').email)
+    }, cookies.get('currentUser'))
 
     return (
         <Flex onClick={()=>{}}
