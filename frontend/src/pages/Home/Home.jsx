@@ -98,7 +98,6 @@ export default function Home (props) {
 
                 <FontAwesomeIcon icon={faBell} color="#C41116"
                     onClick={()=> {
-                        console.log("clicked")
                         setNavNotifications(true)
                     }}
                 />

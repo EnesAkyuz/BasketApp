@@ -18,8 +18,6 @@ export default function Listing(props){
 
     const cookies = new Cookies(null, {path: "/"});
 
-
-
     const firebaseConfig = {
         apiKey: import.meta.env.VITE_FIREBASE_KEY,
         authDomain: "basket-b5fb8.firebaseapp.com",
@@ -34,7 +32,7 @@ export default function Listing(props){
     const database = getFirestore(app)
 
 
-    console.log(props.data.owner, cookies.get("currentUser"))
+    // console.log(props.data.owner, cookies.get("currentUser"))
 
 
     return (
