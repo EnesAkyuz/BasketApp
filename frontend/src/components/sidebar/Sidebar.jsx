@@ -1,5 +1,5 @@
 
-import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
+import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button, Spacer } from '@chakra-ui/react'
 import MenuComponent from '../menuComponent/menuComponent'
 
 import boots from "../../assets/boots.png"
@@ -20,7 +20,7 @@ export default function Sidebar () {
             <MenuComponent />
 
 
-            <Flex width='80%' alignItems='center' gap='20px'>
+            <Flex width='80%' alignItems='center' gap='20px' bottom={'0'}>
                 <Image src={boots} height='50px' width='50px' />
                 <Text fontSize='larger'>log out Yalla</Text>
             </Flex>

@@ -28,7 +28,7 @@ export default function MenuComponent() {
 
 
     return (
-        <Stack height='50vh' width='100%' alignItems='center' spacing='40px'>
+        <Stack height='50%' width='100%' alignItems='center' spacing='40px'>
 
             {menuItem("Home", faShop)}
             {menuItem("My Basket", faBasketShopping)}

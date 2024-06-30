@@ -3,9 +3,13 @@ import styles from "./Home.module.css"
 import Listing from "../../components/listingCard/Listing";
 import Sidebar from "../../components/sidebar/Sidebar.jsx";
 import ShareCard from "../../components/shareCard/shareCard.jsx";
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import AuthModal from "../../components/authModal/authModal.jsx"
+
+import { Input, InputGroup, InputLeftElement, useDisclosure } from "@chakra-ui/react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faLocation } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faLocation, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
 import BasketSidebar from '../../components/basketSidebar/basketSideBar.jsx'
 import { Navigate } from "react-router-dom";
@@ -16,6 +20,8 @@ import {ClaimRewardButton} from "../../components/walletcomp/rewardbutton.tsx";
 export default function Home (props) {
 
     const [navNotifications, setNavNotifications] = useState(false)
+    const [showModal, setShowModal] = useState(false)
+    const [user, setUser] = useState(null)
 
     return (
         <div className={styles.homepage}>
@@ -39,6 +45,11 @@ export default function Home (props) {
                     <Input type="text" placeholder="search location" />
                 </InputGroup>
 
+                <AuthModal />
+
+                <WalletProvider>
+                    <MyComponent1 />
+                </WalletProvider>
 
                 <FontAwesomeIcon icon={faBell} color="#C41116"
                     onClick={()=> {
@@ -64,16 +75,12 @@ export default function Home (props) {
             <div className={styles.listings}>
                 <Text fontSize='large' padding='20px 40px 0 40px'>All Listings</Text>
 
-                <Flex padding='0 40px 0 40px' flexWrap='wrap' >
+                <Flex padding='0 40px 0 40px' flexWrap='wrap' gap={'20px'} >
                     <Listing />
 
                     <Listing />
 
-                    <Listing />
 
-                    <Listing />
-
-                    <Listing />
                 </Flex>
 
             </div>
@@ -84,9 +91,8 @@ export default function Home (props) {
           <MyComponent2 />
           <MyComponent3 />
           <MyComponent4 />
-                     <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"B3TR"} foodItem={"lmao"}></BuyButton>
-                     <ClaimRewardButton rewardAddress={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} amount={1} token={"B3TR"}></ClaimRewardButton>
         </WalletProvider>
+        <BasketSidebar />
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 .homepage {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-areas:
         "sidebar topbar topbar"
@@ -9,13 +9,12 @@
     ;
 
     grid-template-columns: 1fr 3fr 1fr ;
-    grid-template-rows: 1fr 2fr 6fr;
+    grid-template-rows: 0.5fr 1fr 6fr;
 }
 
 
 .sidebar {
     grid-area: sidebar;
-    height: 100%;
 }
 .topbar {
     grid-area: topbar;
