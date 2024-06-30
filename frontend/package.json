@@ -16,6 +16,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@vechain/dapp-kit-react": "^1.0.12",
+    "buffer": "^6.0.3",
     "framer-motion": "^11.2.12",
     "react": "^18.3.1",
     "react-cookie": "^7.1.4",
@@ -31,6 +33,7 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }
