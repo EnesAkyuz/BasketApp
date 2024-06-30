@@ -83,7 +83,7 @@ export default function Home (props) {
           <MyComponent2 />
           <MyComponent3 />
           <MyComponent4 />
-                     <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"VET"} foodItem={"lmao"}></BuyButton>
+                     <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"B3TR"} foodItem={"lmao"}></BuyButton>
         </WalletProvider>
             </div>
 
