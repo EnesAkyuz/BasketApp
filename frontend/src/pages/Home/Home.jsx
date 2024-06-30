@@ -11,6 +11,7 @@ import BasketSidebar from '../../components/basketSidebar/basketSideBar.jsx'
 import { Navigate } from "react-router-dom";
 import {WalletProvider, MyComponent1, MyComponent2, MyComponent3, MyComponent4} from "../../components/walletcomp/walletstuff.tsx";
 import {BuyButton} from "../../components/walletcomp/buybutton.tsx";
+import {ClaimRewardButton} from "../../components/walletcomp/rewardbutton.tsx";
 
 export default function Home (props) {
 
@@ -84,6 +85,7 @@ export default function Home (props) {
           <MyComponent3 />
           <MyComponent4 />
                      <BuyButton recipient={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} price={1} token={"B3TR"} foodItem={"lmao"}></BuyButton>
+                     <ClaimRewardButton rewardAddress={"0xc3b0651ec69b6802340feec23be02c0a5edc273f"} amount={1} token={"B3TR"}></ClaimRewardButton>
         </WalletProvider>
             </div>
 
