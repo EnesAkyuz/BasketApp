@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Home.module.css"
 import Listing from "../../components/listingCard/Listing";
 import Sidebar from "../../components/sidebar/Sidebar.jsx";
 import ShareCard from "../../components/shareCard/shareCard.jsx";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faLocation } from "@fortawesome/free-solid-svg-icons";
 import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
 import BasketSidebar from '../../components/basketSidebar/basketSideBar.jsx'
+import { Navigate } from "react-router-dom";
 
 
 export default function Home (props) {
 
+    const [navNotifications, setNavNotifications] = useState(false)
+
     return (
         <div className={styles.homepage}>
+
+            {
+                navNotifications && (
+                    <Navigate to="notifications" />
+                )
+            }
 
             <div className={styles.sidebar}>
                 <Sidebar />
@@ -27,6 +36,14 @@ export default function Home (props) {
 
                     <Input type="text" placeholder="search location" />
                 </InputGroup>
+
+
+                <FontAwesomeIcon icon={faBell} color="#C41116"
+                    onClick={()=> {
+                        console.log("clicked")
+                        setNavNotifications(true)
+                    }}
+                />
             </div>
 
             <div className={styles.share}>

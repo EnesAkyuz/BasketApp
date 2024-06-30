@@ -4,7 +4,7 @@
     display: grid;
     grid-template-areas:
         "sidebar topbar topbar"
-        "sidebar share basket"
+        "sidebar listings basket"
         "sidebar listings basket"
     ;
 
@@ -23,19 +23,13 @@
     width: 100%;
 
     align-items: center;
-    justify-content: space-between;
+}
 
-    svg {
-        margin-right: 20px;
-        cursor: pointer;
-    }
-}
-.share {
-    grid-area: share;
-    padding: 20px
-}
-.listings {
+.notications {
     grid-area: listings;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     overflow: scroll;
 }
 .basket {
