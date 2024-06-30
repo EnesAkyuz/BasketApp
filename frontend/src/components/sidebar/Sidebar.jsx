@@ -10,9 +10,9 @@ export default function Sidebar () {
     return (
         <Stack spacing="20px" alignItems='center'>
 
-            <Flex width='80%' alignItems='center' gap='20px'>
-                <FontAwesomeIcon height='100px' color='#C41116'icon={faBasketShopping}/>
-                <Text fontSize='large' color='#C41116'>Basket</Text>
+            <Flex width='80%' alignItems='center' gap='20px' paddingTop='20px'>
+                <FontAwesomeIcon height='100px' fontSize='60px' color='#C41116'icon={faBasketShopping}/>
+                <Text  fontSize='40px' color='#C41116'>Basket</Text>
             </Flex>
 
             <Image src="https://i.pinimg.com/originals/3b/ed/41/3bed41ea8eeaab4fbdc572d2a0ba9cb6.png" borderRadius='20px'  />

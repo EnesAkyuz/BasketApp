@@ -7,6 +7,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home.jsx"
+import ListingsPage from './pages/listingsPage/ListingsPage.jsx';
 
 
 function App() {
@@ -16,6 +17,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/Snacks" element={<ListingsPage list="snacks" />} />
+        <Route path="/Veggies" element={<ListingsPage list="veggies" />} />
+        <Route path="/Meals" element={<ListingsPage list="meals" />} />
+        <Route path="/Items" element={<ListingsPage list="items" />} />
+        <Route path="/Desserts" element={<ListingsPage list="desserts" />} />
       </Routes>
     </Router>
   )
