@@ -1,0 +1,44 @@
+.homepage {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "sidebar topbar topbar"
+        "sidebar share basket"
+        "sidebar listings basket"
+    ;
+
+    grid-template-columns: 1fr 3fr 1fr ;
+    grid-template-rows: 0.5fr 1fr 6fr;
+}
+
+
+.sidebar {
+    grid-area: sidebar;
+}
+.topbar {
+    grid-area: topbar;
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}
+.share {
+    grid-area: share;
+    padding: 20px
+}
+.listings {
+    grid-area: listings;
+    margin-bottom: 20px;
+    overflow: scroll;
+}
+.basket {
+    grid-area: basket;
+    padding: 10px;
+}

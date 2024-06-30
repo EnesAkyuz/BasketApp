@@ -7,6 +7,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home.jsx"
+import HomeTest from "./pages/HomeTest/Home.jsx"
 import ListingsPage from './pages/listingsPage/ListingsPage.jsx';
 import NotificationsPage from './pages/notificationsPage/notifications.jsx';
 import Cookies from "universal-cookie"
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Items" element={<ListingsPage list="items" />} />
         <Route path="/Desserts" element={<ListingsPage list="desserts" />} />
         <Route path="/notifications" element={<NotificationsPage />} />
+        <Route path="/test" element={<HomeTest />} />
       </Routes>
     </Router>
   )
