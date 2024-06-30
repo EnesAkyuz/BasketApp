@@ -9,11 +9,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx"
 import ListingsPage from './pages/listingsPage/ListingsPage.jsx';
 import NotificationsPage from './pages/notificationsPage/notifications.jsx';
+import Cookies from "universal-cookie"
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const cookies = new Cookies(null, {path: "/"});
   return (
     <Router>
       <Routes>

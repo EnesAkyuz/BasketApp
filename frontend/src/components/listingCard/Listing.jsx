@@ -1,8 +1,14 @@
 import styles from "./Listing.module.css"
 import { Card, Flex, CardHeader, Box, Text ,  Image, Heading, CardBody, CardFooter, Stack, Divider, Button } from '@chakra-ui/react'
 
+import Cookies from "universal-cookie"
 
 export default function Listing(props){
+
+    const cookies = new Cookies(null, {path: "/"});
+
+    // console.log(cookies.get('currentItem'))
+
     return (
         <Card width='235px' height='400px' padding='0'>
             <CardBody>
@@ -29,7 +35,11 @@ export default function Listing(props){
                     </Flex>
                 </Stack>
 
-                <Button width='100%'>Claim</Button>
+                <Button width='100%'
+                    onClick={()=>{
+                        cookies.set('currentItem', {"item": "this item"})
+                    }}
+                >Claim</Button>
             </CardBody>
         </Card>
     )
