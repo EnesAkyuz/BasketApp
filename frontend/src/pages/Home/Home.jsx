@@ -17,15 +17,18 @@ import {WalletProvider, MyComponent1, MyComponent2, MyComponent3, MyComponent4} 
 import {BuyButton} from "../../components/walletcomp/buybutton.tsx";
 import {ClaimRewardButton} from "../../components/walletcomp/rewardbutton.tsx";
 
+import Cookies from "universal-cookie";
 
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 
 import {getDatabase, onValue, query, ref, set} from "firebase/database"
 
-import { getDoc, getFirestore, setDoc, collection,doc, addDoc, getDocs, QuerySnapshot  } from "firebase/firestore";
+import { getDoc, getFirestore, setDoc, collection,doc, addDoc, getDocs, QuerySnapshot, where  } from "firebase/firestore";
 
 export default function Home (props) {
+
+    const cookies = new Cookies(null, {path: "/"});
 
     const [navNotifications, setNavNotifications] = useState(false)
     const [showModal, setShowModal] = useState(false)

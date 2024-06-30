@@ -73,13 +73,13 @@ export default function Listing(props){
                             ><BuyButton recipient={props.data.user} price={parseFloat(props.data.price)} token={"B3TR"} foodItem={"lmao"}></BuyButton></Button>
 
 
-                            <Button width='100%'
+                            {/* <Button width='100%'
                                 onClick={()=>{
                                     cookies.set('currentItem', {"item": "this item"})
                                 }}
                             >
                                 <ClaimRewardButton rewardAddress={props.data.user} amount={1} token={"B3TR"}></ClaimRewardButton>
-                            </Button>
+                            </Button> */}
 
                         </WalletProvider>
                     )

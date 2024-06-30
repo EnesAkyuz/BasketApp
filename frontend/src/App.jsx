@@ -22,11 +22,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/Snacks" element={<ListingsPage list="snacks" />} />
-        <Route path="/Veggies" element={<ListingsPage list="veggies" />} />
-        <Route path="/Meals" element={<ListingsPage list="meals" />} />
-        <Route path="/Items" element={<ListingsPage list="items" />} />
-        <Route path="/Desserts" element={<ListingsPage list="desserts" />} />
+        <Route path="/Snacks" element={<ListingsPage list="Snacks" />} />
+        <Route path="/Veggies" element={<ListingsPage list="Beggies" />} />
+        <Route path="/Meals" element={<ListingsPage list="Meals" />} />
+        <Route path="/Items" element={<ListingsPage list="Items" />} />
+        <Route path="/Desserts" element={<ListingsPage list="Desserts" />} />
 
 
         <Route path="/notifications" element={<NotificationsPage />} />

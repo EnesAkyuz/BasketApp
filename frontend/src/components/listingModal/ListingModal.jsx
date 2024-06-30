@@ -112,9 +112,9 @@ export default function ListingModal (props) {
                         <Select spacing={3} onChange={(e)=> {setCategory(e.target.value)}}>
                             <option value="Veggies">Veggies</option>
                             <option value="Snacks">Snacks</option>
-                            <option value="Meals>">Meals</option>
-                            <option value="Desserts>">Desserts</option>
-                            <option value="Items>">Items</option>
+                            <option value="Meals">Meals</option>
+                            <option value="Desserts">Desserts</option>
+                            <option value="Items">Items</option>
                         </Select>
 
                     </Stack>
