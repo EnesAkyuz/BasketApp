@@ -1,8 +1,8 @@
 # BasketApp ⭐️3rd Place VeChain x BCG x EasyA Hackathon⭐️
 <div>
-<img src="https://framerusercontent.com/images/3uRpmk3Fkc1IIWkd1AnO9eTDLiQ.png?scale-down-to=2048" alt="HomePage" width="300"/>
-<img src="https://framerusercontent.com/images/rxNS3X35rFmetxmCodp5v7AtXM.png" alt="HomePage" width="300"/>
-<img src="https://framerusercontent.com/images/gXSYuR5pyl3KAJ1o9SO5nT1m8.png" alt="HomePage" width="300"/>
+<img src="https://framerusercontent.com/images/3uRpmk3Fkc1IIWkd1AnO9eTDLiQ.png?scale-down-to=2048" alt="HomePage" width="30%"/>
+<img src="https://framerusercontent.com/images/rxNS3X35rFmetxmCodp5v7AtXM.png" alt="HomePage" width="30%"/>
+<img src="https://framerusercontent.com/images/gXSYuR5pyl3KAJ1o9SO5nT1m8.png" alt="HomePage" width="30%"/>
 </div>
 
 Welcome to our blockchain campus food sharing marketplace and rewards app! To run the application (from the root directory):
